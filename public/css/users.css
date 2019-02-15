@@ -1,0 +1,225 @@
+*{
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+.jump{
+        position: absolute;
+        background:rgba(68, 68, 68, 0.658);
+        width:10rem;
+        height:4rem;
+        top:19rem;
+        left:30rem;
+        opacity: 0;
+        transition: all .5s linear;
+        color:#fff;
+        font-size: 30px;
+        text-align: center;
+        line-height: 3.5rem;
+        border-radius: 10%;
+    }
+.vm_main{
+  background: #f4f6f9;
+  position: relative;
+}
+.tabs{ 
+  list-style:none;
+  padding-left:575px;
+  line-height: 44px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+  padding-bottom: 2px;
+  height: 58px;
+}
+.tabs a{
+  text-decoration:none;
+	color:#000;
+	padding:6px 12px;
+	display:inline-block;
+  width:96px;
+  text-align:center;
+}
+.tabs>li{
+  float:left;
+}
+.tabs>.active{
+  border-bottom: 2px solid rgb(105, 231, 105);
+  color: rgb(105, 231, 105);
+}
+.tabs+.container{
+  position: relative;
+}
+.tabs+.container>div{
+	width: 100%;
+	padding:30px;
+  background: #f4f6f9;
+  border-top:0;
+	position: absolute;
+  left: 0;
+  display: none;
+}
+.tabs+.container>.active{
+  z-index:10;
+  display: block;
+}
+#content1 .vm_photoer{
+  width: 1220px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+  padding-top: 30px;
+  overflow: hidden;
+}
+#content1 .vm_photoer .vm_photoer_item{
+  float: left;
+  height: 420px;
+  width: 286px;
+  margin: 0 19px 19px 0;
+  background: #fff;
+}
+#content1 .vm_photoer .vm_photoer_item .vm_photoer_img{
+  margin: 3px auto;
+}
+#content1 .vm_photoer .vm_photoer_item .vm_attension{
+  font-size: 14px;
+  width: 254px;
+  color: #46d233;
+  margin: 0 auto;
+}
+#content1 .vm_photoer .vm_photoer_item .vm_attension .vm_attension_btn{
+  display: block;
+  transition-duration: .3s;
+  position: relative;
+  height: 30px;
+  line-height: 28px;
+  border-width: 1px;
+  border-style: solid;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+em{
+  font-style: normal;
+}
+#content1 .vm_photoer .vm_photoer_item .my-small{
+  height: 60px;
+  width: 60px;
+  line-height: 44px;
+}
+#content1 .vm_photoer .vm_photoer_item .bigpic{
+  width: 255px;
+  height: 315px;
+  position: relative;
+  background: rgba(0,0,0,0);
+  overflow: hidden;
+  padding-left: 17px;
+  top: -22px;
+}
+#content1 .vm_photoer .vm_photoer_item .my-big{
+  width: 100%;
+  height: 290px;
+}
+#content1 .vm_photoer .vm_photoer_item .smallpic{
+  width: 100%;
+  padding-left: 17px;
+  margin: 1px auto;
+  margin-top: -11px;
+}
+.demo{padding: 2em 0;}
+.box{
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+.box:before{
+	content: "";
+	width: 0;
+	height: 100%;
+	background: #000;
+	padding: 14px 18px;
+	position: absolute;
+	top: 0;
+	left: 0%;
+	opacity: 0;
+	transition: all 500ms cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+}
+.box:hover:before{
+	width: 100%;
+	left: 0;
+	opacity: 0.5;
+}
+.box img{
+	width: 100%;
+	height: auto;
+}
+.box .box-content{
+  width: 100%;
+	padding: 14px 18px;
+	color: #fff;
+	position: absolute;
+	top: 38%;
+	left: 0;
+}
+@media only screen and (max-width:990px){
+	.box{ margin-bottom: 30px; }
+}
+#content1 .vm_photoer .vm_photoer_item .bigpic .vm_user_img{
+  width: 100px;
+  padding-left: 55px;
+  margin-top: -88px;
+  opacity: 0;
+  transition: all 0.7s ease 0s;
+}
+#content1 .vm_photoer .vm_photoer_item .bigpic .vm_user_img .vm_user_img-1{
+  position: relative;
+}
+#content1 .vm_photoer .vm_photoer_item .bigpic .vm_user_img .vm_user_img-1 .vm_user_img-2{
+  width: 100px;
+  height: 100px;
+  border: 1px solid #e2e2e2;
+  font-size: 95px;
+  display: inline-block;
+  border-radius: 100%;
+  background-size: 100%;
+  cursor: pointer;
+}
+#content1 .vm_photoer .vm_photoer_item .bigpic .vm_user_text{
+  font-size: 14px;
+  line-height: 20px;
+  color: #999;
+  height: 80px;
+  width: 100px;
+  padding-left: 55px;
+  margin-top: 4px;
+  opacity: 0;
+  transition: all 0.7s ease 0s;
+}
+#content1 .vm_photoer .vm_photoer_item .bigpic .vm_user_text .vm_user_name{
+  max-width: calc((100% - 23*1px) - 10px);
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  height: 20px;
+  vertical-align: middle;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#content1 .vm_photoer .vm_photoer_item .bigpic .vm_user_msg{
+  font-size: 14px;
+  color: #999;
+  padding: 9px 0;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #eee;
+  padding-left: 11px;
+  margin-top: 2px;
+  width: 206px;
+  opacity: 0;
+  transition: all 0.7s ease 0s;
+}
+.box:hover .vm_user_msg,.box:hover .vm_user_text,.box:hover .vm_user_img{
+  opacity: 1 !important;
+	transition-delay: 0.7s;
+}

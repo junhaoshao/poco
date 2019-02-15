@@ -1,0 +1,80 @@
+body {
+	padding:0;
+	margin:0;
+	background:transparent;
+}
+body,html {
+	height:100%;
+	background:transparent;
+}
+div,li,ul {
+	padding:0;
+	margin:0
+}
+img {
+	vertical-align:top;
+	border:0
+}
+li,ul {
+	list-style:none;
+	text-transform:capitalize
+}
+#banner {
+	margin-bottom:-10px;
+	background:transparent;
+}
+#carousel {
+	position:relative;
+	z-index:2;
+	margin-top:20px;
+	transform-style:preserve-3d;
+	perspective:800px;
+	background:transparent;
+}
+#carousel img {
+	position:absolute;
+	left:55%;
+	top:50%;
+	margin-left:-252px;
+	transition:transform .5s ease-in-out;
+	cursor:pointer
+}
+#bannerNav {
+	position:relative;
+	margin-top:20px;
+	height:10px;
+	padding:10px 0;
+	text-align:center
+}
+#bannerNav ul li {
+	cursor:pointer;
+	overflow:hidden;
+	display:inline-block;
+	width:22px;
+	margin:0 2px
+}
+#bannerNav ul li a {
+	margin:0 auto;
+	display:block;
+	width:6px;
+	height:6px;
+	border-radius:3px;
+	font-size:0
+}
+#bannerNav ul li.on a {
+	width:20px
+}
+
+#carousel {
+	height:500px;
+}
+#carousel img {
+	width:300px;
+	border-radius: 10px;
+	opacity: 0;
+}
+canvas{
+	position:absolute;
+	top:0;
+	left:0
+}

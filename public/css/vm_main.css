@@ -1,0 +1,137 @@
+/*使用通配符将内外边距都设置为零*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* 导航栏 */
+.vm_nav{
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    width: -webkit-fill-available;
+    /* position: fixed; */
+    margin: auto;
+}
+.vm_nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex !important;
+    justify-content: center ;
+}
+.vm_nav li{
+ cursor: pointer;
+}
+.vm_nav li a {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.vm_nav li a:hover {
+    background-color: #4CAF50;
+    color: #fff
+}
+.active {
+    background-color: #4CAF50;
+}
+
+/* 导航栏-下拉框样式 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f999;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #4CAF50;
+}
+.vm_nav_dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* “加载更多”按钮样式 */
+.poco_btn{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+/*瀑布流样式 */
+/* 1.将主容器的布局方式设置为相对布局
+#vm_main_container{
+    position: relative;
+}         
+.waterfall_box{
+    padding: 5px;
+    float: left;
+}
+将承载图片的容器定制颜色及边框大小和圆角
+.waterfall_boximg{
+    padding: 5px;
+    box-shadow: 0 0 5px #ccc;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+关键-定制图片尺寸
+.waterfall_boximg img{
+    width: 250px;
+    height: auto;
+} */
+.vm_main_container{
+    width: 80%;
+    margin: auto;
+}
+.vm_main_container .vm_waterfull li{
+    width: 30%;
+    height: 350px;
+    float: left;
+    list-style: none;
+    margin: 10px;
+}
+.vm_main_container .vm_waterfull li:hover{
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+@keyframes shake {
+	10%, 90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+	20%, 80% {
+		transform: translate3d(2px, 0, 0);
+	}
+	30%, 50%, 70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+	40%, 60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+.vm_main_container .vm_waterfull li a img{
+    width: 100%;
+    height: 100%;
+}
+

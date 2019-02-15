@@ -1,0 +1,53 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+.container .main{
+  position: relative;
+  height:645px;
+}
+.container .main .main-bg img{
+  width:100%;
+  height:645px;
+}
+.container .main .phone{
+  position: absolute;
+  top: -30px;
+  left: 150px;
+}
+.container .main .main-info{
+  position: absolute;
+  top:140px;
+  right:200px;
+}
+.container .main .downLoad{
+  width:400px;
+  height:200px;
+  position: absolute;
+  top:320px;
+  right:300px;
+  background-color:#fff;
+}
+.container .main .downLoad .downLoad-erweima img{
+  width:120px;
+  height:120px;
+  position: absolute;
+  top:30px;
+  left:30px;
+}
+.container .main .downLoad .downLoad-erweima .downLoad-info{
+  position: absolute;
+  top:160px;
+  left:45px;
+}
+.container .main .downLoad .downLoad-iphone{
+  position: absolute;
+  top:30px;
+  right:50px;
+}
+.container .main .downLoad .downLoad-android{
+  position: absolute;
+  top:100px;
+  right:50px;
+}

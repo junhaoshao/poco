@@ -1,0 +1,310 @@
+
+
+/*---登录注册示例按钮---*/
+#top-button{
+    position:absolute;
+    top:73px;
+    left:100px;
+    width:360px;
+    height:25px;
+    z-index:9;
+    color:#fff;
+    padding:20px 0;
+}
+#top-button>h4{
+    float:left;
+    margin:0 10px;
+    height:44px;
+    width:100px;
+    text-align:center;
+    cursor:pointer;
+	line-height:44px;
+	font-weight:bold;
+	letter-spacing:4px;
+	font-size:18px
+}
+#top-button>h4.active{
+    background:#46d233;
+}
+#top-button>h4.tab3{
+    background:#ec532d;
+}
+/*---背景图--*/
+.container{ 
+    position:relative;
+    width:100%;
+    min-width:1200px;
+    height:100%;
+    min-height:675px;
+    background-size:100% 100%;
+}
+#slider{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+#slider>img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:all 1s ease;
+}
+#slider>img.active{
+    opacity:1;
+}
+/*---登陆/注册错误提示框---*/
+#err{
+    position:absolute;
+    top:0;
+    left:50%;
+    height:40px;
+    width:360px;
+    margin-left:-180px;
+    background:rgb(248, 91, 102);
+    text-align:center;
+    box-sizing:border-box;
+    padding:0 10px;
+    white-space:nowrap;
+    line-height:40px;
+    color:#fff;
+    z-index:99;
+    transform:translateY(-40px);
+    transition:all 0.4s ease;
+}
+#err>div:first-child{
+    float:left;
+    width:300px;
+    text-align:center;
+    font-size:15px;
+    box-sizing:border-box;
+    padding-left:40px;
+}
+#err>.close{
+    float:right;
+    cursor:pointer;
+    text-align:center;
+    font-size:22px;
+    box-sizing:border-box;
+    width:40px;
+    height:40px;
+}
+/*---登陆/注册框---*/
+#signUp,#login{
+    background:#fff;
+    position:absolute;
+    z-index:2;
+    width:444px;
+    left:50%;
+    top:50%;
+    margin-left:-222px;
+    display:none;
+}
+#signUp{
+    height:534px;
+    margin-top:-267px;
+}
+#login{
+    height:574px;
+    margin-top:-287px;
+}
+#signUp.active,#login.active{
+    display:block;
+}
+#signUp>.main,#login>.main{
+    width:320px;
+    height:100%;
+    box-sizing:border-box;
+    padding:35px 0;
+    margin:0 auto;
+}
+#signUp>.main>h2,#login>.main>h2{
+    font-size:24px;
+    color:#111;
+    width:100%;
+    text-align:center;
+    margin-bottom:30px;
+}
+#signUp>.main>div.code-line,#signUp>.main>div.pswd-line,#login>.main>div.pswd-line,#login>.main>div.verify-line,#login>.main>div.login-line,#login>.main>div.third-btn{
+    margin-top:30px;
+}
+#signUp div.code-line{
+    position:relative;
+}
+#signUp div.code-line>a.getCode{
+    position:absolute;
+    right:0;
+    top:33px;
+    color: #46d233;
+    text-align:center;
+    line-height:20px;
+    font-size:16px;
+    cursor:pointer;
+    width:120px;
+    border-left:1px solid #46d233;
+    z-index:9;
+}
+#signUp>.main>div.read-line{
+    margin-top:15px;
+    color:#999
+}
+#signUp>.main>div.read-line>input{
+    height:16px;
+    width:16px;
+    cursor:pointer;
+    z-index:9;
+    vertical-align:middle;
+    margin-top:5px;
+}
+#signUp div.read-line>span{
+    display:inline-block;
+    vertical-align:middle;
+}
+#signUp div.read-line>span>a{
+    color:#46d233;
+    text-decoration:underline;
+}
+#signUp>.main>div.submit-line,#signUp>.main>div.last-line,#login>.main>div.newUser-line,#login>.main>div.or-line{
+    margin-top:20px;
+}
+#login>.main>div.first-line{
+    height:64px;
+    color:#999;
+}
+#login>.main>div.first-line>div{
+    display:inline-block;
+    text-align:center;
+    font-size:16px;
+    padding:10px 50px;
+    
+}
+#login>.main>div.first-line>div>span{
+    cursor:pointer;
+}
+#login>.main>div.first-line>div.active{
+    color:#46d233;
+    border-bottom:1px solid #46d233;
+}
+#login>.main>div.verify-line.hidden{
+    display:none;
+}
+#login>.main>div.newUser-line:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#login>.main>div.newUser-line>a{
+    color:#999;
+    width:45%;
+    font-size:16px;
+    cursor:pointer;
+}
+#login>.main>div.newUser-line>a:first-child{
+    width:100px;
+    float:left;
+}
+#login>.main>div.newUser-line>a:last-child{
+    width:80px;
+    float:right;
+}
+#login>.main>div.or-line{
+    clear:both;
+    text-align:center;
+    font-size:12px;
+    color:#999;
+}
+#login>.main>div.or-line>div{
+    display:inline-block;
+}
+#signUp div.last-line>a{
+    color:#999;
+    width:45%;
+    font-size:16px;
+    float:right;
+    text-align:right;
+}
+#signUp div.last-line>a:hover{
+    color:#46d233;
+}
+#signUp>.main p,#login>.main p{
+    font-size:14px;
+    color:#111;
+    height:14px;
+    line-height:14px;
+}
+#signUp>.main input:not([type=checkbox]),#login>.main input{
+    border:1px solid #ccc;
+    padding:10px;
+    width: 100%;
+    height:40px;
+    box-sizing:border-box;
+    background:#fff;
+    margin-top:10px;
+}
+#signUp>.main>.phone-line>div:after,#login>.main>.phone-line>div:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#signUp>.main>.phone-line>div>input:first-child,#login>.main>.phone-line>div>input:first-child{
+    float:left;
+    text-align:center;
+    width:88px;
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+    cursor:pointer;
+}
+#signUp>.main>.phone-line>div>input:last-child,#login>.main>.phone-line>div>input:last-child{
+    float:left;
+    width:222px;
+    margin-left:10px;
+}
+#signUp>.main .signUp,#login>.main .login{
+    color:#fff;
+    border:0;
+    height:40px;
+    line-height:40px;
+    font-size:16px;
+    width:100%;
+    cursor:pointer;
+}
+#signUp>.main button.signUp{
+    background:#46d233;
+}
+#signUp>.main button.signUp:disabled{
+    background:#90e485;
+}
+#login>.main button.login{
+    background:#46d233;
+}
+#login>.main>div.third-btn{
+    text-align:center;
+}
+#login .login-weibo,#login .login-weixin,#login .login-qq {
+    display:inline-block;
+    cursor:pointer;
+    vertical-align:middle;
+    margin:0 30px;
+}
+#login .login-weibo{
+    height:24px;
+    width:29px;
+    background:url('../img/third-ico.png') no-repeat 0 -159px;
+}
+#login .login-weixin {
+    height:23px;
+    width:28px;
+    background:url('../img/third-ico.png') no-repeat 0 -224px;
+}
+#login .login-qq{
+    height:23px;
+    width:22px;
+    background:url('../img/third-ico.png') no-repeat 0 -51px;
+}
+
+
+
+

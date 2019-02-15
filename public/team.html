@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>团队风采</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style type="text/css">
+body{background-color:#000044;background:url(images/bg.jpg) repeat-x;margin:0px;overflow:hidden;}
+a{color:#0078ff;}
+.info{
+	width:20rem;
+	height:4rem;
+	margin:0 36.9%;
+	position:absolute;
+	top:27rem;
+	color:#fff;
+	font-size:30px;
+	text-align:center;
+	line-height:3.5rem;
+}
+</style>
+
+</head>
+
+<body onLoad="init()">
+	<div id="banner">
+		<div id="carousel">
+			<img src="images/01.jpg" data-url="#" data-id="1">
+			<img src="images/02.jpg" data-url="#" data-id="2">
+			<img src="images/03.jpg" data-url="#" data-id="3">
+			<img src="images/07.jpg" data-url="#" data-id="7">
+			<img src="images/05.jpg" data-url="#" data-id="5">
+			<img src="images/04.jpg" data-url="#" data-id="4">
+			<img src="images/06.jpg" data-url="#" data-id="6">
+		
+		</div>
+		<div class="info">闫鑫</div>
+	</div>
+	
+	<script src="js/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/slider.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(function() {
+			$('#carousel').carousel({
+				curDisplay: 0, //默认索引
+				autoPlay: false, //是否自动播放
+				interval: 3000 //间隔时间
+			});
+			
+		});
+		let list=[{id:1,name:"闫鑫"},{id:2,name:"常杨"},{id:3,name:"邵俊豪"},{id:4,name:"郑方舟"},{id:5,name:"翁训梓"},{id:6,name:"马思嘉"},{id:7,name:"章晨梁"}]
+			$("#carousel>img").click(function(){
+				let $id=$(this).attr("data-id");
+				console.log($id);
+				let $name = list[$id-1].name
+				console.log($name);
+				$(".info").html($name);
+			})
+	</script>
+
+<script type="text/javascript" src="js/ThreeCanvas.js"></script>
+<script type="text/javascript" src="js/Snow.js"></script>
+<script type="text/javascript">
+//当前屏幕的宽高
+var SCREEN_WIDTH = window.innerWidth;
+var SCREEN_HEIGHT = window.innerHeight;
+
+var container;
+
+var particle;
+
+var camera;
+var scene;
+var renderer;
+
+var mouseX = 0;
+var mouseY = 0;
+//当前屏幕一半的宽高
+var windowHalfX = window.innerWidth / 2;
+var windowHalfY = window.innerHeight / 2;
+
+var particles = []; 
+var particleImage = new Image();//THREE.ImageUtils.loadTexture( "img/ParticleSmoke.png" );
+particleImage.src = 'images/ParticleSmoke.png'; 
+
+
+
+function init() {
+
+	container = document.createElement('div');
+	document.body.appendChild(container);
+
+	camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+	camera.position.z = 1000;
+
+	scene = new THREE.Scene();
+	scene.add(camera);
+		
+	renderer = new THREE.CanvasRenderer();
+	renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
+		
+	for (var i = 0; i < 500; i++) {
+
+		particle = new Particle3D( material);
+		particle.position.x = Math.random() * 2000 - 1000;
+		particle.position.y = Math.random() * 2000 - 1000;
+		particle.position.z = Math.random() * 2000 - 1000;
+		particle.scale.x = particle.scale.y =  1;
+		scene.add( particle );
+		
+		particles.push(particle); 
+	}
+
+	container.appendChild( renderer.domElement );
+
+
+	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+	document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+	document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+	
+	setInterval( loop, 1000 / 60 );
+	
+}
+
+function onDocumentMouseMove( event ) {
+
+	mouseX = event.clientX - windowHalfX;
+	mouseY = event.clientY - windowHalfY;
+}
+
+function onDocumentTouchStart( event ) {
+
+	if ( event.touches.length == 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		mouseY = event.touches[ 0 ].pageY - windowHalfY;
+	}
+}
+
+function onDocumentTouchMove( event ) {
+
+	if ( event.touches.length == 1 ) {
+
+		event.preventDefault();
+
+		mouseX = event.touches[ 0 ].pageX - windowHalfX;
+		mouseY = event.touches[ 0 ].pageY - windowHalfY;
+	}
+}
+
+//
+
+function loop() {
+
+for(var i = 0; i<particles.length; i++)
+	{
+
+		var particle = particles[i]; 
+		particle.updatePhysics(); 
+
+		with(particle.position)
+		{
+			if(y<-1000) y+=2000; 
+			if(x>1000) x-=2000; 
+			else if(x<-1000) x+=2000; 
+			if(z>1000) z-=2000; 
+			else if(z<-1000) z+=2000; 
+		}				
+	}
+
+	camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+	camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+	camera.lookAt(scene.position); 
+
+	renderer.render( scene, camera );
+
+	
+}
+
+</script>
+
+<div style="text-align:center;clear:both"></div>
+
+</body>
+</html>

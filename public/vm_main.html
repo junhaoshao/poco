@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>poco摄影社区作品</title>
+    
+    <link rel="stylesheet" href="./css/vm_main.css"> 
+		 <link rel="stylesheet" href="css/list.css">
+  <link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/header2.css">
+    <link rel="stylesheet" href="css/rela.css">
+
+</head>
+<body>
+  
+<header class="header"></header>
+    <div class="vm_main">
+        <!-- 导航栏 -->
+        <div class="vm_nav">
+            <ul>
+                <!-- 推荐榜 -->
+                <li class="vm_nav_dropdown">
+                    <a id="recommend">推荐</a>
+                    <div class="dropdown-content">
+                        <a href="?now_id=editor" id="editor">编辑推荐</a>
+                        <a href="?now_id=moderator" id="moderator">版主推荐</a>
+                        <a href="?now_id=region" id="region">站长推荐</a>
+                    </div>
+                </li>
+                <!-- 人气榜 -->
+                <li class="vm_nav_dropdown">
+                    <a id="tops">人气榜</a>
+                    <div class="dropdown-content">
+                        <a href="?now_id=today_tops" id="today_tops">今日人气榜</a>
+                        <a href="?now_id=week_tops" id="week_tops">本周人气榜</a>
+                        <a href="?now_id=month_tops" id="month_tops">本月人气榜</a>
+                    </div>
+                </li>
+                <!-- 其他筛选 -->
+                <li><a id="medal">勋章作品</a></li>
+                <li><a id="newest">最新</a></li>
+                <li><a id="album">专辑</a></li>
+                <li><a id="view">视觉漫游</a></li>
+                <li><a id="square">图片广场</a></li>
+                <!-- 类别栏 -->
+                <li  class="vm_nav_dropdown">
+                    <a class="active" id="type">类别</a>
+                    <div class="dropdown-content">
+                        <a href="?now_id=1" id="type-1">人像</a>
+                        <a href="?now_id=2" id="type-2">风景</a>
+                        <a href="?now_id=3" id="type-3">宠物</a>
+                        <a href="?now_id=4" id="type-4">生活</a>
+                        <a href="?now_id=5" id="type-5">航拍</a>
+                        <a href="?now_id=6" id="type-6">潜水</a>
+                        <a href="?now_id=7" id="type-7">纪实</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 图片加载（页面主体） -->
+        
+        <div class="vm_main_container">
+            <ul class="vm_waterfull">
+            </ul>
+            <center class="center">
+                <button class="poco_btn photo_getmore">加载更多</button>
+                <button class="poco_btn to_top">返回顶部</button>
+            </center>
+        </div>
+        <footer class="footer"></footer>
+        <!-- 展示板块切换组件 -->
+				<script src="js/jquery-3.2.1.js"></script>
+        <script src="./js/vm_main.js"></script>
+</body>
+</html>
